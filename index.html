@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Livraria</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="content">
+            <a href="#" id="logo">LIVRARIA</a>
+            <!-- PC -->
+            <div class="items">
+                <a href="#about">
+                    Sobre
+                </a>
+                <a href="#menu">
+                    Categorias
+                </a>
+            </div>
+            <div class="icons">
+                <a href="#cart" ref="modal:open" id="cart">
+                    <span class="iconify-inline" data-icon="mdi:cart-variant"></span>
+                    <div id="notify"></div>
+                </a>
+            </div>
+            <!-- MOBILE -->
+            <div class="btnMobile">
+                <span class="iconify-inline" data-icon="charm:book-open"></span>
+            </div>
+        </div>
+        <div class="itemsMobile">
+            <a href="#about">
+                Sobre
+            </a>
+            <a href="#menu">
+                Acervo
+            </a>
+            <div class="icons">
+                <a href="#cart" rel="modal:open" id="cart">
+                    <span class="iconify-inline" data-icon="mdi:cart-variant"></span>
+                    <div id="notify"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- BANNER -->
+    <div class="banner">
+        <div id="whiteDiv">
+            <div class="bannerContent">
+                <div>
+                    <h1>Encontre os melhores <span>livros</span>.</h1>
+                    <p id="subtitle">Procure os livros do momento por um preço acessível! 
+                        Temos um grande acervo com as mais variadas temáticas.</p>
+                    <a href="#menu" class="btn">Pega os livro ai</a>
+                    <div class="social">
+                        <a href="#">
+                            <span class="iconify" data-icon="brandico:facebook"></span>
+                        </a>
+                        <a href="#">
+                            <span class="iconify" data-icon="akar-icons:instagram-fill"></span>
+                        </a>
+                        <a href="#">
+                            <span class="iconify" data-icon="akar-icons:twitter-fill"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ITEMS -->
+    <div class="items container">
+        <div class="cardItems">
+            <span class="iconify" data-icon="ph:tote-duotone"></span>
+            <h4>Escolha os livros</h4>
+            <p>Selecione todos os livros que deseja comprar cliando no botão 'Adicionar'.</p>
+        </div>
+        <div class="cardItems">
+            <span class="iconify" data-icon="ph:circle-wavy-check-duotone"></span>
+            <h4>Verifique o carrinho</h4>
+            <p>Verifique se todos os livors estão no carrinho de compras.</p>
+        </div>
+        <div class="cardItems">
+            <span class="iconify" data-icon="ph:wallet-duotone"></span>
+            <h4>Envie o pedido</h4>
+            <p>Após verificar os itens, informe o endereço de entrega e basta esperar!</p>
+        </div>
+    </div>
+    <!-- MENU -->
+    <div id="menu" class="container">
+        <h3>Acervo</h3>
+        <div id="menuItems" class="linksMenu">
+            <button href="#" class="linkMenu active" id="showAll">Tudo</button>
+            <button href="#" class="linkMenu" id="showMistery">Mistério</button>
+            <button href="#" class="linkMenu" id="showAdventure">Aventura</button>
+            <button href="#" class="linkMenu" id="showBoxes">Box</button>
+            <button href="#" class="linkMenu" id="showTerror">Terror</button>
+            <button href="#" class="linkMenu" id="showFantasy">Fantasia</button>
+            <a href="#promotions" class="linkMenu"></a>
+        </div>
+        <div class="cardsMenu" id="showMenu">
+            <!-- ITEMS MENU -->
+        </div>
+    </div>
+
+    <div class="footerBottom">
+        <div class="content">
+            <p>LIVRARIA - 2022 &copy; Todos os direitos reservados.</p>
+            <div class="social">
+                <a href="#">
+                    <span class="iconify" data-icon="brandico:facebook"></span>
+                </a>
+                <a href="#">
+                    <span class="iconify" data-icon="akar-icons:instagram-fill"></span>
+                </a>
+                <a href="#">
+                    <span class="iconify" data-icon="akar-icons:twitter-fill"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart" class="modal">
+        <p>Thanks for clicking. That felt good.</p>
+        <a href="#" rel="modal:close">Close</a>
+    </div>
+
+    <script>
+        const btnMobile = document.querySelector('.btnMobile')
+        const navMobile = document.querySelector('.itemsMobile')
+
+        const toggleBtn = () => {
+            if (navMobile.style.transform === 'translateX(0%)')
+                navMobile.style.transform = 'translateX(100%)'
+            else
+                navMobile.style.transform = 'translateX(0%)'
+        }
+
+        btnMobile.addEventListener('click', toggleBtn)
+    </script>
+
+    <script src="./js/products.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/cart.js"></script>
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+</body>
+
+</html>
